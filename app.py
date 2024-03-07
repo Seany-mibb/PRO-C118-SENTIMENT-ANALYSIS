@@ -34,17 +34,17 @@ def predict():
 def save():
 
     # extracting date , product name , review , sentiment associated from the JSOn data
-    date = request.json.get('')
-    product = request.json.get('')
-    review = request.json.get('')
-    sentiment = request.json.get('')
+    date = request.json.get('date')
+    product = request.json.get('product')
+    review = request.json.get('review')
+    sentiment = request.json.get('sentiment')
 
     # creating a final variable seperated by commas
     data_entry = date + "," + product + "," + review + "," + sentiment
 
     # open the file in the 'append' mode
-    with open("./static/assets/datafiles/updated_product_dataset.csv", "a") as g:
-        g.write(data_entry)
+    with open("./static/assets/datafiles/new_entry.csv", "a") as g:
+        g.write(data_entry+"\n")
     # Log the data in the file
 
     # return a success message
